@@ -1,10 +1,9 @@
-
 <?php
 
 namespace App\Http\Controllers;
 use App\Models\product;
 use Illuminate\Http\Request;
-
+rar
 class ProductController extends Controller
 {
     //
@@ -22,7 +21,7 @@ class ProductController extends Controller
       $product->quantity = $request->quantity;
      $is_saved = $product->save();
     if($is_saved){
-    echo " MR DEMEKE YIDEG YOUR DATA Record saved successfully.";
+    echo " MR DEMEKE YIDEG YOUR DATA SAVED SUCCESSFULLY.";
                }
     else{
      echo "Sorry, try again something went wrong.";
@@ -33,9 +32,13 @@ class ProductController extends Controller
     public function get_all()
 {
  $product = product::all();
- return view('product.get_all', compact('product'));
+ return view('product.list', compact('product'));
 }
-
+public function edit($id)
+ {
+ $product = product::find($id);
+ return view('product.edit', compact('product'));
+ }
  public function update(Request $request)
  {
  //Validate
@@ -46,12 +49,12 @@ class ProductController extends Controller
   $product->price = $request->price;
   $product->quantity = $request->quantity;
   $product->save();
-  return redirect('product/get_all');
+  return redirect('product/list');
   }
   public function delete($id)
  {
  product::where('id', $id)->delete();
- return redirect('product/get_all');
+ return redirect('product/list');
  }
 
  public function get_by_id($id)
