@@ -4,10 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
+     * 
      *
      * @return void
      */
@@ -15,11 +16,11 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('unit')->nullable();
-            $table->double('price',8.2)->nullable();
-            $table->integer('quantity')->nullable();
             $table->timestamps();
+            $table->string('name');
+            $table->string('unit');
+            $table->string('price');
+            $table->string('quantity');
         });
     }
 
@@ -32,4 +33,4 @@ class CreateProductsTable extends Migration
     {
         Schema::dropIfExists('products');
     }
-}
+};

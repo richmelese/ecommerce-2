@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 @section('content')
 <div class="container pb-2">
@@ -9,7 +10,7 @@
  <div class="col-md-8">
  <div class="card">
  <div class="card-header">
- {{ __('MR DEMEKE THIS IS YOUR PRODUCT LIST') }}
+ {{ __('PRODUCT LIST') }}
  </div>
  <div class="card-body">
  <table class="table table-striped table-bordered ">
@@ -37,9 +38,6 @@
  <td> {{ $product->price }}</td>
  <td> {{ $product->quantity }}</td>
  <td>
- <a class="btn btn-xs btn-info" title="Detail" href="/product/search/{{ $product->id }}">Details</a>
- <a class="btn btn-xs btn-success" title="Edit" href="/product/edit/{{$product->id }}">Edit</a>
- <a class="btn btn-xs btn-danger" title="Delete" href="/product/delete/{{ $product->id }}">Delete</a>
  </td>
  </tr>
 @endforeach
@@ -51,4 +49,6 @@
  </div>
 </div>
 @endsection
+
+
 
