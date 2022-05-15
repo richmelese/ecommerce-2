@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class CatagoryController extends Controller
 {
+<<<<<<< HEAD
     //
     public function register(Request $request){
         /*
@@ -50,3 +51,33 @@ class CatagoryController extends Controller
         }
     */
 }
+=======
+  //
+  public function register()
+  {
+    return view('Catagory.register');
+  }
+  function store(Request $request)
+
+  {
+    $Catagory = new Catagory();
+    $Catagory->name = $request->name;
+    $is_saved = $Catagory->save();
+    if ($is_saved) {
+      echo " DATA IS SAVED SUCCESFULLLY.";
+    } else {
+      echo "Sorry, try again something went wrong.";
+    }
+  }
+  public function get_all()
+  {
+    $Catagory = Catagory::all();
+    return view('Catagory.get_all', compact('Catagory'));
+  }
+  public function get_by_id($id)
+  {
+    $Catagory = Catagory::where('id', $id)->first();
+    return view('Catagory.get_by_id', compact('Catagory'));
+  }
+}
+>>>>>>> 2651e81c0ef6f7ca49280a2f2db4f19d1116fba0
