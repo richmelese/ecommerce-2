@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use Illuminate\Http\Request;
 use App\Http\Models;
 use App\Models\product;
@@ -49,38 +48,9 @@ class ProductController extends Controller
     }
 */
     
-}
-=======
-use App\Models\product;
-use Illuminate\Http\Request;
 
-class ProductController extends Controller
-{
-  //
-  public function register()
-  {
-    return view('product.register');
-  }
-  function store(Request $request)
 
-  {
-    $product = new product();
-    $product->name = $request->name;
-    $product->unit = $request->unit;
-    $product->price = $request->price;
-    $product->quantity = $request->quantity;
-    $is_saved = $product->save();
-    if ($is_saved) {
-      echo " MR DEMEKE YIDEG YOUR DATA SAVED SUCCESSFULLY.";
-    } else {
-      echo "Sorry, try again something went wrong.";
-    }
-  }
-  public function get_all()
-  {
-    $product = product::all();
-    return view('product.list', compact('product'));
-  }
+ 
   public function edit($id)
   {
     $product = product::find($id);
@@ -110,4 +80,3 @@ class ProductController extends Controller
     return view('product.search', compact('product'));
   }
 }
->>>>>>> 2651e81c0ef6f7ca49280a2f2db4f19d1116fba0
