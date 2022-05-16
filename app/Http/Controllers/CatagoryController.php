@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class CatagoryController extends Controller
 {
-<<<<<<< HEAD
+
     //
     public function register(Request $request){
         /*
@@ -50,9 +50,9 @@ class CatagoryController extends Controller
             return view('product.list' $product);
         }
     */
-}
-=======
-  //
+      }
+      /*
+  
   public function register()
   {
     return view('Catagory.register');
@@ -80,4 +80,4 @@ class CatagoryController extends Controller
     return view('Catagory.get_by_id', compact('Catagory'));
   }
 }
->>>>>>> 2651e81c0ef6f7ca49280a2f2db4f19d1116fba0
+*/
